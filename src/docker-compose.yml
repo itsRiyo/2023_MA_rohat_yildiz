@@ -1,0 +1,9 @@
+version: "2.2"
+services:
+  realsense_ros:
+    image: ros-realsense
+    volumes:
+      - /dev:/dev
+    network_mode: "host"
+    privileged: true
+    command: roslaunch realsense2_camera rs_t265.launch

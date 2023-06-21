@@ -1,0 +1,40 @@
+root@rohat-MacBookPro:~/ws# history
+    1  apt update
+    2  apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
+    3  apt install -y software-properties-common
+    4  add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
+    5  apt install -y librealsense2-dkms
+    6  apt install -y librealsense2-utils
+    7  apt install -y librealsense2-dev
+    8  apt install -y librealsense2-dbg
+    9  cd ~
+   10  mkdir ws
+   11  cd ws
+   12  catkin_init_workspace 
+   13  ls
+   14  rm -rf *
+   15  mkdir src
+   16  cd src
+   17  catkin_init_workspace 
+   18  cd ..
+   19  catkin_make
+   20  source devel/setup.bash 
+   21  apt install -y git
+   22  cd src/
+   23  git clone https://github.com/IntelRealSense/realsense-ros
+   24  cd realsense-ros/
+   25  git checkout ros1-legacy
+   26  cd ../..
+   27  catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+   28  rosdep init
+   29  apt-get install python-pip
+   30  apt-get install python pip
+   31  pip3 install -U rosdep
+   32  rosdep init
+   33  rosdep update
+   34  catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+   35  rosdep install -y -r --from-paths src/
+   36  apt install ros-noetic-realsense2-camera
+   37  catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+   38  history
+
